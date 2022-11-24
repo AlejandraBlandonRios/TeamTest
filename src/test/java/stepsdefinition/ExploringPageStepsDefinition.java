@@ -1,31 +1,41 @@
 package stepsdefinition;
 
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.screenplay.actors.OnStage;
+import net.serenitybdd.screenplay.actors.OnlineCast;
+import net.thucydides.core.annotations.Managed;
+import org.openqa.selenium.WebDriver;
+import userinterface.TeamInternationalPageUserInterface;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ExploringPageStepsDefinition {
 
+    @Managed(driver="chrome")
+    private WebDriver navegadorChrome;
+    @Before
+    public void configuracionInicial() {
+        OnStage.setTheStage(new OnlineCast());
+        theActorCalled("user").can(BrowseTheWeb.with(navegadorChrome));
+    }
     @Given("User go through the page")
     public void user_go_through_the_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        theActorInTheSpotlight().wasAbleTo(Open.browserOn(new TeamInternationalPageUserInterface()));
     }
     @When("User scroll all page, section by section")
     public void user_scroll_all_page_section_by_section() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
     }
     @When("Fill out required information on Contact Sales section")
     public void fill_out_required_information_on_contact_sales_section() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
     }
     @Then("The reporter is generated")
     public void the_reporter_is_generated() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
     }
 
 }
