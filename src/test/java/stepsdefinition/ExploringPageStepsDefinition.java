@@ -10,6 +10,7 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
+import tasks.ScrollToTeam;
 import userinterface.TeamInternationalPageUserInterface;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -18,11 +19,11 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class ExploringPageStepsDefinition {
 
     @Managed(driver="chrome")
-    private WebDriver navegadorChrome;
+    private WebDriver chromeBrowser;
     @Before
     public void configuracionInicial() {
         OnStage.setTheStage(new OnlineCast());
-        theActorCalled("user").can(BrowseTheWeb.with(navegadorChrome));
+        theActorCalled("user").can(BrowseTheWeb.with(chromeBrowser));
     }
     @Given("User go through the page")
     public void user_go_through_the_page() {
@@ -30,6 +31,8 @@ public class ExploringPageStepsDefinition {
     }
     @When("User scroll all page, section by section")
     public void user_scroll_all_page_section_by_section() {
+        theActorInTheSpotlight().attemptsTo(ScrollToTeam.page(chromeBrowser));
+
     }
     @When("Fill out required information on Contact Sales section")
     public void fill_out_required_information_on_contact_sales_section() {
