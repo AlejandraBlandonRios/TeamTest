@@ -1,6 +1,8 @@
 package runners;
 
-import io.cucumber.junit.CucumberOptions;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.SnippetType;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
@@ -8,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/exploring_page.feature",
         glue="stepsdefinition",
-        snippets= CucumberOptions.SnippetType.CAMELCASE)
+        snippets= SnippetType.CAMELCASE)
 
 public class ExploringPageRunner {
 }
