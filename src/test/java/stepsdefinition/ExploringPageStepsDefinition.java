@@ -9,7 +9,10 @@ import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import tasks.ScrollToTeam;
 import userinterface.TeamInternationalPageUserInterface;
 
@@ -32,7 +35,6 @@ public class ExploringPageStepsDefinition {
     @When("User scroll all page, section by section")
     public void user_scroll_all_page_section_by_section() {
         theActorInTheSpotlight().attemptsTo(ScrollToTeam.page(chromeBrowser));
-
     }
     @When("Fill out required information on Contact Sales section")
     public void fill_out_required_information_on_contact_sales_section() {

@@ -2,15 +2,14 @@ package interactions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Tasks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class CheckMouseOver implements Interaction {
+public class CheckMouseOverTrust implements Interaction {
     WebDriver chromeBrowser;
-    public CheckMouseOver(WebDriver chromeBrowser) {
+    public CheckMouseOverTrust(WebDriver chromeBrowser) {
         this.chromeBrowser = chromeBrowser;
     }
     @Override
@@ -20,7 +19,7 @@ public class CheckMouseOver implements Interaction {
             builder.moveToElement(chromeBrowser.findElement(By.xpath("//*[@id='logo-partners-"+i+"']"))).perform();
         }
     }
-    public static CheckMouseOver trustSection(WebDriver chromeBrowser) {
-        return Tasks.instrumented(CheckMouseOver.class, chromeBrowser);
+    public static CheckMouseOverTrust section(WebDriver chromeBrowser) {
+        return Tasks.instrumented(CheckMouseOverTrust.class, chromeBrowser);
     }
 }

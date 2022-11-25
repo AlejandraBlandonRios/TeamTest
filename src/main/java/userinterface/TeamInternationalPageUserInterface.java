@@ -14,7 +14,7 @@ public class TeamInternationalPageUserInterface extends PageObject{
     public static final Target LOCATIONS_SECTION = Target.the("Locations section").
             located(By.xpath("//*[@id='content']/section[4]"));
     public static final Target RIGHT_ARROW_BUTTON = Target.the("Right arrow button").
-            located(By.className("//*[@id='content']/section[4]/div/div/div[2]/div/div[3]/img[2]"));
+            located(By.className("/html/body/div[1]/div/section[4]/div/div/div[2]/div/div[3]/img[2]"));
     public static final Target PORTUGAL_SUBSECTION = Target.the("Portugal Subsection").
             located(By.className("//*[@id='content']/section[4]/div/div/div[2]/div/div[3]/div/div/div[4]/div[2]/a"));
 }
