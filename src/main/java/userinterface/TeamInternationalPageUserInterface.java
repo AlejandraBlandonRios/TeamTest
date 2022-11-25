@@ -13,8 +13,10 @@ public class TeamInternationalPageUserInterface extends PageObject{
             located(By.xpath("//*[@id='content']/section[3]"));
     public static final Target LOCATIONS_SECTION = Target.the("Locations section").
             located(By.xpath("//*[@id='content']/section[4]"));
-    public static final Target RIGHT_ARROW_BUTTON = Target.the("Right arrow button").
-            located(By.className("/html/body/div[1]/div/section[4]/div/div/div[2]/div/div[3]/img[2]"));
-    public static final Target PORTUGAL_SUBSECTION = Target.the("Portugal Subsection").
-            located(By.className("//*[@id='content']/section[4]/div/div/div[2]/div/div[3]/div/div/div[4]/div[2]/a"));
+    public static final Target TOP_GUN_SECTION = Target.the("Top Gun Lab section").
+            located(By.xpath("//*[@id='content']/section[5]"));
+    public static final Target EMPOWER_SECTION = Target.the("Empower your career section").
+            located(By.xpath("//*[@id='content']/section[6]"));
+    public static final Target CONTACT_SALES_SECTION = Target.the("Contact Sales section").
+            located(By.xpath("//*[@id='content']/section[7]"));
 }

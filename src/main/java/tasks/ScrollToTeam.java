@@ -1,9 +1,6 @@
 package tasks;
 
-import interactions.CheckMouse;
-import interactions.CheckMouseOverLocation;
-import interactions.CheckMouseOverTrust;
-import interactions.MoveToNextSubsectionOnLocation;
+import interactions.*;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -37,7 +34,13 @@ public class ScrollToTeam implements Task {
                 CheckMouseOverLocation.section(7,chromeBrowser),
                 MoveToNextSubsectionOnLocation.section(chromeBrowser),
                 CheckMouseOverLocation.section(8,chromeBrowser),
-                MoveToNextSubsectionOnLocation.section(chromeBrowser)
+                MoveToNextSubsectionOnLocation.section(chromeBrowser),
+                CheckMouseOverLocation.section(9,chromeBrowser),
+                Scroll.to(TOP_GUN_SECTION),
+                CheckMouseOverTopGun.section(chromeBrowser),
+                Scroll.to(EMPOWER_SECTION),
+                CheckMouseOverEmpower.section(chromeBrowser),
+                Scroll.to(CONTACT_SALES_SECTION)
         );
     }
     public static ScrollToTeam page(WebDriver chromeBrowser) {
