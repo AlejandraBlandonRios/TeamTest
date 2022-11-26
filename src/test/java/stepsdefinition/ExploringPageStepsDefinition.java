@@ -1,6 +1,7 @@
 package stepsdefinition;
 
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -38,12 +39,14 @@ public class ExploringPageStepsDefinition {
     public void user_scroll_all_page_section_by_section() {
         theActorInTheSpotlight().attemptsTo(ScrollToTeam.page(chromeBrowser));
     }
-    @When("Fill out required information on Contact Sales section")
-    public void fill_out_required_information_on_contact_sales_section() {
-        theActorInTheSpotlight().attemptsTo(Fillout.requiredInformation(chromeBrowser));
+    @And("^Fill out (.*), (.*), (.*), (.*), (.*), (.*).$")
+    public void fillOutFirstNameLastNameCompanyEmailPhoneMessage(String name, String lastName, String company, String email, String phone, String message) {
+        theActorInTheSpotlight().attemptsTo(Fillout.requiredInformation(chromeBrowser, name, lastName, company, email, phone,message));
     }
     @Then("^User send the information to Contact Sales$")
     public void userSendTheInformationToContactSales() {
         theActorInTheSpotlight().should(seeThat(MessageOf.thanks(), Matchers.equalTo("THANK YOU FOR CONTACTING US!")));
     }
+
+
 }
