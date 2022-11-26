@@ -30,7 +30,7 @@ public class Fillout implements Task {
                 Enter.theValue("Test message").into(MESSAGE_INPUT),
                 Click.on(PRIVACY_POLICY_CHECKBOX),
                 Click.on(ANNOUNCEMENTS_CHECKBOX),
-                Click.on(THANKS_MESSAGE));
+                Click.on(CONTACT_SALES_BUTTON));
     }
     public static Fillout requiredInformation(WebDriver chromeBrowser) {
         return Tasks.instrumented(Fillout.class, chromeBrowser);

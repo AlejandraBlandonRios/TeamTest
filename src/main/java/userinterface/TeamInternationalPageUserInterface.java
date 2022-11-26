@@ -35,7 +35,9 @@ public class TeamInternationalPageUserInterface extends PageObject{
             located(By.xpath("(//span[@class='checkmark'])[1]"));
     public static final Target ANNOUNCEMENTS_CHECKBOX = Target.the("Announcements checkbox").
             located(By.xpath("(//span[@class='checkmark'])[2]"));
-    public static final Target THANKS_MESSAGE = Target.the("Thanks message").
+    public static final Target CONTACT_SALES_BUTTON = Target.the("Contact sales button").
             located(By.xpath("//*[@class='submit-button']"));
+    public static final Target THANKS_MESSAGE = Target.the("Thanks message").
+            located(By.xpath("(//div[@class='thanks-text'])[1]"));
 
 }

@@ -4,16 +4,20 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
+import org.hamcrest.Matchers;
 import org.openqa.selenium.WebDriver;
+import questions.MessageOf;
 import tasks.Fillout;
 import tasks.ScrollToTeam;
 import userinterface.TeamInternationalPageUserInterface;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -38,9 +42,8 @@ public class ExploringPageStepsDefinition {
     public void fill_out_required_information_on_contact_sales_section() {
         theActorInTheSpotlight().attemptsTo(Fillout.requiredInformation(chromeBrowser));
     }
-
     @Then("^User send the information to Contact Sales$")
     public void userSendTheInformationToContactSales() {
-
+        theActorInTheSpotlight().should(seeThat(MessageOf.thanks(), Matchers.equalTo("THANK YOU FOR CONTACTING US!")));
     }
 }
