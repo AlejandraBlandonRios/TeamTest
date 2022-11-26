@@ -19,4 +19,23 @@ public class TeamInternationalPageUserInterface extends PageObject{
             located(By.xpath("//*[@id='content']/section[6]"));
     public static final Target CONTACT_SALES_SECTION = Target.the("Contact Sales section").
             located(By.xpath("//*[@id='content']/section[7]"));
+    public static final Target FIRST_NAME_INPUT = Target.the("First name input").
+            located(By.xpath("//input[@data-id='firstName']"));
+    public static final Target LAST_NAME_INPUT = Target.the("Last name input").
+            located(By.xpath("//input[@data-id='lastName']"));
+    public static final Target COMPANY_INPUT = Target.the("Company name input").
+            located(By.xpath("//input[@data-id='company']"));
+    public static final Target EMAIL_INPUT = Target.the("Email input").
+            located(By.xpath("//input[@data-id='email']"));
+    public static final Target PHONE_NUMBER_INPUT = Target.the("Phone number input").
+            located(By.xpath("//input[@data-id='phone']"));
+    public static final Target MESSAGE_INPUT = Target.the("Message input").
+            located(By.xpath("//input[@data-id='message']"));
+    public static final Target PRIVACY_POLICY_CHECKBOX = Target.the("Privacy policy checkbox").
+            located(By.xpath("(//span[@class='checkmark'])[1]"));
+    public static final Target ANNOUNCEMENTS_CHECKBOX = Target.the("Announcements checkbox").
+            located(By.xpath("(//span[@class='checkmark'])[2]"));
+    public static final Target THANKS_MESSAGE = Target.the("Thanks message").
+            located(By.xpath("//*[@class='submit-button']"));
+
 }

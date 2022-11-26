@@ -39,8 +39,8 @@ public class ScrollToTeam implements Task {
                 Scroll.to(TOP_GUN_SECTION),
                 CheckMouseOverTopGun.section(chromeBrowser),
                 Scroll.to(EMPOWER_SECTION),
-                CheckMouseOverEmpower.section(chromeBrowser),
-                Scroll.to(CONTACT_SALES_SECTION)
+                CheckMouseOverEmpower.section(chromeBrowser)
+
         );
     }
     public static ScrollToTeam page(WebDriver chromeBrowser) {
